@@ -1,0 +1,40 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Function Parameters</Title>
+                <Description>Provides an example of some parameters</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+function Demo-Parameters {
+	[CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='Low',DefaultParameterSetName = 'FileName')]
+
+  param
+  (
+    [Parameter(Mandatory,Position = 0,HelpMessage = 'Prefix of file or log name',ParameterSetName = 'BaseName')]
+    [String]$baseNAME,
+    [Parameter(Mandatory,Position = 0,HelpMessage = 'Full file name',ParameterSetName = 'FileName')]
+    [String]$FileName,
+	[Parameter(Mandatory=$true, ValueFromPipeline=$true,
+		ValueFromPipelineByPropertyName=$true)]
+	[Alias('hostname')]
+	[ValidateLength(4,14)]
+	[ValidateCount(1,10)]
+	[string[]]$computername,
+
+	[switch]$nameLog
+	)
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Set-SafetySwitch</Title>
+                <Description>Turns on &quot;WhatIf&quot; for the entire script</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+Function Set-SafetySwitch
+{
+  <#
+      .SYNOPSIS
+      Turns on "WhatIf" for the entire script
+  #>
+  If ($WhatIfPreference -eq $true)
+  {
+    $Script:WhatIfPreference = $false
+    Write-Host 'Safety OFF' -ForegroundColor Red
+  }
+  else
+  {
+    $Script:WhatIfPreference = $true
+    Write-Host 'Safety ON' -ForegroundColor Green
+  }
+}]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

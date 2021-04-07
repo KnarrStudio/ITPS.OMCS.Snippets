@@ -1,0 +1,37 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Select-UsingGridview</Title>
+                <Description>Outputs a list to grid-view, for the user to select one or more items.  Easier than typing.</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+### Kill the process that the user selects
+$Process = Get-Process | 
+Out-GridView -Title 'Please select a process to kill' -OutputMode Single;
+Stop-Process -InputObject $Process;
+
+### Kill multiple processes that the user selects
+$ProcessList = Get-Process | 
+Out-GridView -Title 'Please select a process to kill' -OutputMode Multiple;
+Stop-Process -InputObject $ProcessList;
+
+### Prompt the user to abort or retry some operation, using custom input values
+do {
+    $Result = @('Abort', 'Retry') | 
+    Out-GridView -Title 'Which action should be performed?' -OutputMode Single;
+} while ($Result -eq 'Retry');
+  ]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

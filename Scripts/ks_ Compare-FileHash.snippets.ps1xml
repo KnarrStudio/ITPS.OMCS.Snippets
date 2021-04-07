@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Compare-FileHash</Title>
+                <Description>Compare file hash.</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+$hash = '3C7AB09DDF9D79C4A7CC252BCCBA0A1F7CB57E691A6EF5750A0C080FCCA889F6' # File Hash as string
+Compare-Object $(Get-FileHash .\Downloads\filename).hash -DifferenceObject $hash -IncludeEqual
+
+<#
+Matching Example:
+InputObject                                                      SideIndicator
+-----------                                                      -------------
+3C7AB09DDF9D79C4A7CC252BCCBA0A1F7CB57E691A6EF5750A0C080FCCA889F6 ==
+
+Non-matching Example:
+InputObject                                                      SideIndicator
+-----------                                                      -------------
+3C7AB09DDF9D79C4A7CC252BCCBA0A1F7CB57E691A6EF5750A0C080FCCA889F  =>
+3C7AB09DDF9D79C4A7CC252BCCBA0A1F7CB57E691A6EF5750A0C080FCCA889F6 <=
+#>
+
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

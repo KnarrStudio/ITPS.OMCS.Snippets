@@ -1,0 +1,34 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Split-String and Export-CSV</Title>
+                <Description>Spits a string and exports to csv with column names</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+$Filelist = Get-ChildItem | where name -Match '-' 
+#$name1,$name2 = $filelist.name -split '_' 
+
+$newname = ForEach($file in $filelist){
+    $name1,$name2 = $file.name -split '-' 
+    new-object psobject -Property @{
+        FileName = $file.Name
+        Building = $name2
+        Room = $name1
+    }
+}
+$newname | select Filename,Room,Building | export-csv .\test-split.csv -NoTypeInformation
+  ]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

@@ -1,0 +1,34 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Get-Date -UFormat</Title>
+                <Description>Setting up a datestamp in parameters</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+    [Parameter(Mandatory = $False,Position = 2,HelpMessage = 'Formatting Choice 1 to 4')]
+    [ValidateRange(1,5)]
+    [int]$StampFormat = 1
+  )
+  $Uformat = '%y', '%y%m%d%H%M', '%Y%m%d', '%j%H%M%S', '%y-%m-%d_%H.%M'
+  $DateStamp = Get-Date -UFormat $Uformat[$StampFormat]
+  if($StampFormat -eq 5)
+  {
+    $DateStamp = Get-Date -Format o | ForEach-Object -Process {
+      $_ -replace ':', '.'
+    }
+  }
+  ]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

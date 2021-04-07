@@ -1,0 +1,32 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Test Admin Rights</Title>
+                <Description>Test for Admin Rights for the whole script or just part.</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[For the whole script to require admin rights:
+#Requires -RunAsAdministrator
+
+If only some parts of the script need admin rights, then you can test at that point:
+# Test if the script is "RunasAdminsitrator"
+$asAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+if ($asAdmin -ne $true){ Script }
+else{
+   Write-Host '*** Re-run as an administrator ******' -ForegroundColor Black -BackgroundColor Yellow
+}
+  ]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

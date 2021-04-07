@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Set-PowerShellUserProfile</Title>
+                <Description>Sets some defaults for when PowerShell loads.</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+$Cred = Get-Credential
+$PSDefaultParameterValues.Add("*:Credential",$Cred)
+$PSDefaultParameterValues.Add("Get-ChildItem:Force",$True)
+$PSDefaultParameterValues.Add("Receive-Job:Keep",$True)
+$PSDefaultParameterValues.Add("Format-Table:AutoSize",{if ($host.Name -eq "ConsoleHost"){$true}})
+$PSDefaultParameterValues.Add("Send-MailMessage:To","<emailaddress>")
+$PSDefaultParameterValues.Add("Send-MailMessage:SMTPServer","mail.whatever.com")
+$PSDefaultParameterValues.Add("Update-Help:Module","*")
+$PSDefaultParameterValues.Add("Update-Help:ErrorAction","SilentlyContinue")
+$PSDefaultParameterValues.Add("Test-Connection:Quiet",$false)
+$PSDefaultParameterValues.Add("Test-Connection:Count","1")
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
