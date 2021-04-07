@@ -17,7 +17,7 @@ All you need is either the **snippet** folder or the **scripts** folder.
 To import snippets, they must be properly formatted in the snippet XML for Windows PowerShell ISE
 snippets and saved in Snippet.ps1xml files. The snippets in this repository were copied from a currently working set.
 
-# Import-IseSnippet 
+### Import-IseSnippet 
 Imported snippets are available only in the current session. To import the snippets into all Windows
 PowerShell ISE sessions, add an `Import-IseSnippet` command to your Windows PowerShell profile or
 copy the snippet files to your local snippets directory
