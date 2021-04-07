@@ -1,6 +1,16 @@
 # ITPS.OMCS.Snippets 
-To view and use the imported snippets, from the Windows PowerShell ISE **Edit** menu, click **Start
+
+When using the PowerShell ISE , similar to other scripting editors, you have access to what are known as ‘code snippets’. These are quick start ways to generate frequently used code, for instance if there is something you use regularly and can never remember the syntax for, or maybe it is too long to be practical to remember it.
+
+PowerShell ISE ships with some default snippets. In the Windows PowerShell ISE **Edit** menu, click **Start
 Snippets** or press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
+
+It is also possible to add some custom snippets of your own. This repository is a set of snippets that I use.
+
+## QUICK HOW-TO
+All you need is either the **snippet** folder or the **scripts** folder. 
+- If you copy the **scripts** then all you have to do is run as many of the scripts as you want.
+- If you copy the **snippet** folder then you can either copy the files to the `$home\Documents\WindowsPowershell\Snippets` folder and restart the PowerShell ISE.
 
 ## DESCRIPTION
 
