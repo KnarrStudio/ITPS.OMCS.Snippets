@@ -1,0 +1,56 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Import-ConfigSettings</Title>
+                <Description>Use a config or settings file to import variables that may normally be &quot;baked-in&quot;.  This will allow a script to be signed.</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[# Input settings with a config file. This is a JSON with headings
+
+$ConfigFile = '.\config2.json '
+$HashConfig = Get-Content $ConfigFile | ConvertFrom-Json -AsHashtable
+$SplatSettings = $HashConfig.Other
+Write-Host 'Example 4: JSON with headings -' $SplatSettings.Color
+
+# File Format Example - .\config2.json
+{
+  "General": {
+    "MySetting1": [
+      "value=asdf=34"
+    ]
+  },
+  "Locations": {
+    "InputFile": [
+      "\"C:\\Users.txt\""
+    ],
+    "OutputFile": [
+      "\".\\output.log\""
+    ]
+  },
+  "Other": {
+    "WaitForTime": [
+      "20"
+    ],
+    "Color": [
+      "Blue bunny suit"
+    ],
+    "VerboseLogging": [
+      "True"
+    ]
+  }
+}
+
+  ]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
