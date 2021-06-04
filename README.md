@@ -99,3 +99,36 @@ Function Set-SafetySwitch
 New-IseSnippet -Text $snippet -Title 'ks: Set-SafetySwitch' -Description 'Turns on "WhatIf" for the entire script' -Author 'Knarr Studio'
 
 ``` 
+### Example 3: New snippets
+```powershell
+$SnipData = @{
+Title = 'ks_ Workflow Examples' 
+Author = 'Erik' 
+Description = 'How to create a workflow' 
+}
+
+$workflow = @'
+workflow Test-Workflow
+{
+    Get-Process -Name PowerShell
+    gps -Name Winword
+}
+
+workflow Test-Workflow
+{
+    [CmdletBinding(ConfirmImpact=<String>,
+        DefaultParameterSetName=<String>,
+        HelpURI=<URI>,
+        PositionalBinding=<Boolean>)]
+
+    Param
+    (
+        [parameter(Mandatory=$true)]
+        [String[]]
+        $<ParameterName>
+    )
+}
+'@
+
+New-IseSnippet  @SnipData -Text $workflow 
+```
