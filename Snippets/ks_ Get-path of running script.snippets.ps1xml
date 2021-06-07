@@ -1,0 +1,29 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Get-path of running script</Title>
+                <Description>This only works while in the script</Description>
+                <Author>Erik</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+To get the full path of the script:
+$ScriptPath = $MyInvocation.MyCommand.Path
+
+To get the folder that the script is running from:
+$FolderPath = Split-Path ($MyInvocation.MyCommand.Path) -Parent
+
+Example:
+Get-Content -Path "$FolderPath\Snippet-ExampleFile.ps1" -Raw]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

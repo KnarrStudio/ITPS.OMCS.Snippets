@@ -2,7 +2,7 @@
     <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
         <Snippet Version='1.0.0'>
             <Header>
-                <Title>ks_ New-Snippet from File</Title>
+                <Title>ks: New-Snippet from File</Title>
                 <Description>How to create a snippet from a file</Description>
                 <Author>Erik</Author>
                 <SnippetTypes>

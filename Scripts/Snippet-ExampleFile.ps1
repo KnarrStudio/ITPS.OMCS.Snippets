@@ -1,5 +1,5 @@
 ﻿$SnipData = @{
-Title = 'ks_ New-Snippet from File' 
+Title = 'ks: New-Snippet from File' 
 Author = 'Erik' 
 Description = 'How to create a snippet from a file' 
 }
