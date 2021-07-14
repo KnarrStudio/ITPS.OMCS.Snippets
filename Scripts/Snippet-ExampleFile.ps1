@@ -1,4 +1,6 @@
-﻿$SnipData = @{
+﻿return # Added to make sure that it doesn't run by accident
+
+$SnipData = @{
 Title = 'ks: New-Snippet from File' 
 Author = 'Erik' 
 Description = 'How to create a snippet from a file' 
