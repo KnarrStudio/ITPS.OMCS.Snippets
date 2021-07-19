@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: New-Snippet from File</Title>
+                <Description>How to create a snippet from a file</Description>
+                <Author>Erik</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[(Get-Content -Path .\Snippet-ExampleFile.ps1 -Raw)]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

@@ -12,17 +12,22 @@
 
             <Code>
                 <Script Language='PowerShell' CaretOffset='0'>
-                    <![CDATA[$SnipData = @{
-Title = 'ks_ New-Snippet from File' 
-Author = 'Erik' 
-Description = 'How to create a snippet from a file' 
+                    <![CDATA[
+#requires -Version 3.0 -Modules ISE
+return # Added to make sure that it doesn't run by accident
+
+#Filename - IseSnippet-NestedHashTable.ps1
+
+
+$SnipData = @{
+  Title       = 'ks: New-Snippet from File'
+  Author      = 'Erik'
+  Description = 'How to create a snippet from a file'
 }
 
-$SnipText = @'
-(Get-Content -Path .\Snippet-ExampleFile.ps1 -Raw)
-'@
+$SnipText = Get-Content -Path .\Snippet-ExampleFile.ps1 -Raw
 
-New-IseSnippet  @SnipData -Text $SnipText
+New-IseSnippet  @SnipData -Text $SnipText -Force
 
 # OR
 

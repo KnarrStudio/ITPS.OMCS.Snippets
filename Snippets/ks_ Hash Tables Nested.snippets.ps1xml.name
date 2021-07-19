@@ -1,0 +1,28 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Hash Tables Nested</Title>
+                <Description>Nested hash table example</Description>
+                <Author>Erik</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[$MyVar = @{
+  tst1 = @{
+    tst1a = 'c:\temp\'
+    tst1b = 'Pumkin'
+  }
+  tet2 = 'testing'
+}
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
