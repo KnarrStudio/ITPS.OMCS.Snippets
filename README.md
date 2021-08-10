@@ -1,16 +1,16 @@
 # ITPS.OMCS.Snippets 
 
-When using the PowerShell ISE , similar to other scripting editors, you have access to what are known as ‘code snippets’. These are quick start ways to generate frequently used code, for instance if there is something you use regularly and can never remember the syntax for, or maybe it is too long to be practical to remember it.
+When using the PowerShell ISE , similar to other scripting editors, you have access to what are known as ‘code snippets’. These are _quick-start_ ways to generate frequently used code.  PowerShell ISE ships with some default snippets. In the Windows PowerShell ISE **Edit** menu, click **Start Snippets** or press <kbd>Ctrl</kbd>+<kbd>J</kbd>.  It is also possible to add some custom snippets of your own. 
 
-PowerShell ISE ships with some default snippets. In the Windows PowerShell ISE **Edit** menu, click **Start
-Snippets** or press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
+This repository is for the creation and storage of homemade snippets.  Sure the default ones are good, but sometimes you might need more information or have it filled out completely.  That is where this repo comes into play.  If there is code that you use regularly and too long to remember or type each time, the snippet is for you.  If you find yourself "Binging" the solution because you can't get the syntax correct, then the snippet is for you.  If you like shortcuts, then the snippet is for you.
 
-It is also possible to add some custom snippets of your own. This repository is a set of snippets that I use.
+This repository is a set of snippets that I use.
 
 ## QUICK HOW-TO
-All you need is either the **snippet** folder or the **scripts** folder. 
-- If you copy the **scripts** then all you have to do is run as many of the scripts as you want.
-- If you copy the **snippet** folder then you can either copy the files to the `$home\Documents\WindowsPowershell\Snippets` folder and restart the PowerShell ISE.
+
+This Repo is set up for two different ways to deply the _snippets_.  To get this working on your system you will need to decide whether you want to run multiple scripts or just copy and paste.  
+1. If you want to run the _scripts_ then all you have to do is _copy_ the scripts folder and run as many of the scripts as you want.
+1. To use the copy/paste method, then you will need to copy the **snippet** folder to your system (This is a nice backup too).  Then copy/paste the _.snippets.ps1xml_ files to the `$home\Documents\WindowsPowershell\Snippets` folder and restart the PowerShell ISE.
 
 ## DESCRIPTION
 
@@ -35,7 +35,7 @@ Import-IseSnippet [-Path] <String> [-Recurse] [<CommonParameters>]
 
 ### Example: Import snippets from a directory
 
-This example imports the snippets from the `\\Server01\Public\Snippets` directory into the current
+This example imports the snippets from the network `\\Server01\Public\Snippets` directory into the current
 session. It uses the **Recurse** parameter to get snippets from all subdirectories of the Snippets
 directory.
 
@@ -44,8 +44,7 @@ Import-IseSnippet -Path \\Server01\Public\Snippets -Recurse
 ```
 
 ## OTHER COMMANDS
-The `Get-IseSnippet` cmdlet, which gets user-created snippets in the local snippets directory, does
-not get imported snippets.
+The `Get-IseSnippet` cmdlet, returns a list of user-created snippets in the local snippets directory.  It does not get imported snippets.
 
 ```powershell
 Get-IseSnippet
