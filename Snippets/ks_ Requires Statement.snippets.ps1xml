@@ -1,0 +1,28 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Requires Statement</Title>
+                <Description>Prevents a script from running without the required elements.</Description>
+                <Author>Erik</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[#Requires -Version <N>[.<n>]
+#Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
+#Requires -Modules { <Module-Name> | <Hashtable> }
+#Requires -PSEdition <PSEdition-Name>
+#Requires -ShellId <ShellId> -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
+#Requires -RunAsAdministrator
+
+https://ss64.com/ps/syntax-requires.html]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

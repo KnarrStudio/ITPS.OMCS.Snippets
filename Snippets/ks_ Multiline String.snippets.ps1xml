@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: Multiline String</Title>
+                <Description>A multiline string is a string whose value exceeds beyond one line. </Description>
+                <Author>Erik</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[In that, the string should be enclosed within a here-string(@â€ â€@). Newline or carriage return value can also be used to create a multiline string. Multiline string can also be defined by using a line break within double-quotes.
+
+$String = @"
+Line one
+Line two
+Line three
+"@
+
+Use single quotes to use varables inside the string
+
+EXAMPLE:
+$OutPut = (@'
+File = {0}
+Algorithm = {1}
+Original hash = {2}
+Current hash = {3}
+'@  -f $fileName, $algorithm, $originalhash, $fileHash)
+
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
