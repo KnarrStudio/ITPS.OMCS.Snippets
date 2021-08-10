@@ -10,7 +10,7 @@ This repository is a set of snippets that I use.
 
 This Repo is set up for two different ways to deply the _snippets_.  To get this working on your system you will need to decide whether you want to run multiple scripts or just copy and paste.  
 1. If you want to run the _scripts_ then all you have to do is _copy_ the scripts folder and run as many of the scripts as you want.
-1. To use the copy/paste method, then you will need to copy the **snippet** folder to your system (This is a nice backup too).  Then copy/paste the _.snippets.ps1xml_ files to the `$home\Documents\WindowsPowershell\Snippets` folder and restart the PowerShell ISE.
+1. To use the copy/paste method, then you will need to copy the **snippet** folder to your system (This is a nice backup too).  Then copy/paste the _.snippets.ps1xml_ files to the `$env:USERPROFILE\Documents\WindowsPowershell\Snippets` folder and restart the PowerShell ISE.
 
 ## DESCRIPTION
 
