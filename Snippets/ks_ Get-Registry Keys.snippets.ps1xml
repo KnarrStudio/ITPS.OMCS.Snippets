@@ -2,8 +2,8 @@
     <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
         <Snippet Version='1.0.0'>
             <Header>
-                <Title>ks: New-Snippet from File</Title>
-                <Description>How to create a snippet from a file</Description>
+                <Title>ks: Get-Registry Keys</Title>
+                <Description>How to get list of registry keys</Description>
                 <Author>Erik</Author>
                 <SnippetTypes>
                     <SnippetType>Expansion</SnippetType>
@@ -12,7 +12,7 @@
 
             <Code>
                 <Script Language='PowerShell' CaretOffset='0'>
-                    <![CDATA[(Get-Content -Path .\Snippet-ExampleFile.ps1 -Raw)]]>
+                    <![CDATA[Get-ItemProperty -Path HKCU:\Software\Simontatham\PuTTY\Sessions\*]]>
                 </Script>
             </Code>
 

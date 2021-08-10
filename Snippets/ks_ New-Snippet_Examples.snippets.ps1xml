@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: New-Snippet_Examples</Title>
+                <Description>Examples of how to create a snippet</Description>
+                <Author>Erik</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[#requires -Version 3.0 -Modules ISE
+
+########################################
+######### Quick Snippet Creation ##############
+ 
+New-IseSnippet -Title 'Snippet Name' -Author 'Erik' 
+-Description 'How to create a snippet' 
+-Text @'
+
+Get-Process powershell_ise
+Start-Process winword
+'@
+
+
+
+########################################
+######### From File Ex: 1 ##############
+
+$SnipData = @{
+  Title       = 'ks: New-Snippet from File'
+  Author      = 'Erik'
+  Description = 'How to create a snippet from a file'
+}
+
+$SnipText = Get-Content -Path .\Snippet-ExampleFile.txt -Raw # This can also be a script (ps1)
+
+New-IseSnippet  @SnipData -Text $SnipText -Force
+
+
+
+########################################
+######### From File Ex: 2 ##############
+
+New-IseSnippet -Title 'Snippet Name' -Author 'Erik' 
+-Description 'How to create a snippet from a file' 
+-Text (Get-Content .\SomeCodeSnippet.ps1 -Raw)
+
+
+
+
+
+
+]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+

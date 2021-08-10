@@ -1,0 +1,68 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+    <Snippets  xmlns='http://schemas.microsoft.com/PowerShell/Snippets'>
+        <Snippet Version='1.0.0'>
+            <Header>
+                <Title>ks: New-CommentBasedHelp</Title>
+                <Description>A tool to create a Comment Based Help for your script</Description>
+                <Author>Knarr Studio</Author>
+                <SnippetTypes>
+                    <SnippetType>Expansion</SnippetType>
+                </SnippetTypes>
+            </Header>
+
+            <Code>
+                <Script Language='PowerShell' CaretOffset='0'>
+                    <![CDATA[
+$HshTbl = [ordered]@{
+  SYNOPSIS    = 'Describe purpose of "test" in 1-2 sentences.'
+  DESCRIPTION = 'Add a more complete description of what the function does.'
+  EXAMPLE     = 'Provied an example'
+  NOTES       = 'Place additional notes here.'
+  LINK        = 'URLs to related sites.  The first link is opened by Get-Help -Online test'
+  INPUTS      = 'List of input types that are accepted by this function.'
+  OUTPUTS     = 'List of output types produced by this function.'
+}
+
+foreach($key in $HshTbl.Keys.Clone())
+{
+  $response = Read-Host -Prompt $HshTbl[$key]
+  if($response -eq '')
+  {
+    $response = 'N/A'
+  }
+
+  $HshTbl[$key] = $response
+  }
+
+
+$OutClip = (@"
+
+    .SYNOPSIS
+    {0}
+
+    .DESCRIPTION
+    {1}
+
+    .EXAMPLE
+    {2}
+
+    .NOTES
+    {3}
+
+    .LINK
+    {4}
+
+    .INPUTS
+    {5}
+
+    .OUTPUTS
+    {6}
+"@ -f $HshTbl['SYNOPSIS'], $HshTbl['DESCRIPTION'], $HshTbl['EXAMPLE'], $HshTbl['NOTES'], $HshTbl['LINK'], $HshTbl['INPUTS'], $HshTbl['OUTPUTS'])
+  
+$OutClip | clip.exe]]>
+                </Script>
+            </Code>
+
+    </Snippet>
+</Snippets>
+
