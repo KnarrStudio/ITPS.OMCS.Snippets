@@ -7,12 +7,17 @@ $SnipData = @{
 }
 
 $SnipText = @'
-$MyVar = @{
-  tst1 = @{
-    tst1a = 'c:\temp\'
-    tst1b = 'Pumkin'
+$NestedHashtable = @{
+  Main1 = 'apples'
+  Main2 = @{
+    Sub1 = 'c:\temp\'
+    Sub2 = 'Pumkin'
   }
-  tet2 = 'testing'
+  Main3 = 'testing'
+  Main4 = @{
+    Sub1 = 'c:\temp\'
+    Sub2 = 'grapes'
+  }
 }
 
 '@
