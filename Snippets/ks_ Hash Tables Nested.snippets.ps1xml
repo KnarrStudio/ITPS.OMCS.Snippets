@@ -12,12 +12,18 @@
 
             <Code>
                 <Script Language='PowerShell' CaretOffset='0'>
-                    <![CDATA[$MyVar = @{
-  tst1 = @{
-    tst1a = 'c:\temp\'
-    tst1b = 'Pumkin'
+                    <![CDATA[
+$NestedHashtable = @{
+  Main1 = 'apples'
+  Main2 = @{
+    Sub1 = 'c:\temp\'
+    Sub2 = 'Pumkin'
   }
-  tet2 = 'testing'
+  Main3 = 'testing'
+  Main4 = @{
+    Sub1 = 'c:\temp\'
+    Sub2 = 'grapes'
+  }
 }
 ]]>
                 </Script>
