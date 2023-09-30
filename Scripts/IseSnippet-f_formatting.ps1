@@ -11,7 +11,7 @@ $m = @'
 "{0:F2}" -f 1.8292
 
 # ":x or :X" represents Hexa Decimal
-"{0:x}" -f 909887
+"{0:x}" -f 12648430
 
 # "#" Digit Place Holder
 "{0:###-##-##}" -f 8976203
