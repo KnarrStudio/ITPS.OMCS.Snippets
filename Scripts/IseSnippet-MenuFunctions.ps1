@@ -12,17 +12,12 @@ function Show-QuickMenu
   {0}
 
 0 = Exit
-1 = Option One
-2 = Option Two
+1 = Get-Service "Option One"
+2 = Get-Printer
 
 --------------------------------------------------
 "@  -f $MenuTitle )
   Write-Host $MenuList -ForegroundColor Green
-  $answer = Read-Host -Prompt 'Please Make a Selection'  
-  #Quick Menu. 
-  while ($choice -ne 0)
-  {
-    #Display the menu options function
     $choice = Read-Host -Prompt "`nSelection"
     switch ($choice)
     {
@@ -44,7 +39,6 @@ function Show-QuickMenu
       }
     }
   }
-}
 **********************************************************************
 **********************************************************************
 function Show-MainMenu
